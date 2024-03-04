@@ -7,15 +7,23 @@ import timeLineBar from "./assets/timeLineBar.png";
 import "./App.css";
 
 const App = () => {
+
+  const scrollToSection = (passedSection) => {
+
+    const targetSection = document.getElementById(`${passedSection}`);
+    // Scroll to the target section smoothly
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="bg-white">
-      <nav className="flex w-[100%] items-center justify-between bg-white p-[5px] text-black border border-red-400">
+      <nav id="home-section" className="flex w-[100%] items-center justify-between bg-white p-[5px] text-black border border-red-400">
         <h1>{`<AV />`}</h1>
         <div className="flex justify-around items-center w-[400px] border border-red-400">
-          <p>Home</p>
-          <p>Work</p>
-          <p>Resume</p>
-          <p>Contact</p>
+          <p onClick={() => scrollToSection("home-section")}>Home</p>
+          <p onClick={() => scrollToSection("work-section")}>Work</p>
+          <p onClick={() => scrollToSection("resume-section")}>Resume</p>
+          <p onClick={() => scrollToSection("contact-section")}>Contact</p>
         </div>
         <div className="flex w-[100px] align-items justify-around border border-red-400">
           <a href="https://twitter.com/av_iex" target="_blank">
@@ -49,7 +57,7 @@ const App = () => {
             in full stack development, automation and UI/UX design.
           </p>
           <div className="flex justify-end p-[15px]">
-            <button className="border text-white bg-black rounded-[50px] w-[220px] h-[80px]">
+            <button onClick={() => scrollToSection("target-section")} className="border text-white bg-black rounded-[50px] w-[220px] h-[80px]">
               View my work
             </button>
           </div>
@@ -61,7 +69,7 @@ const App = () => {
         />
       </div>
       <div className="flex flex-col w-[100%] justify-center items-center m-auto bg-white text-black border border-red-500">
-        <h2 className="text-[40px]">Recent Work</h2>
+        <h2 id="work-section" className="text-[40px]">Recent Work</h2>
       </div>
       <div>
         <div>
@@ -96,7 +104,7 @@ const App = () => {
         </div>
       </div>
       <div className="flex flex-col w-[100%] justify-center items-center bg-white text-black border border-red-500">
-        <h2 className="text-[40px]">Resume</h2>
+        <h2 id="resume-section" className="text-[40px]">Resume</h2>
       </div>
       <div className="border border-blue-400 flex">
         <div>
@@ -135,7 +143,7 @@ I specialize in full stack development, automation and UI/UX design.</p>
         </div>
       </div>
       <div className="flex flex-col w-[100%] bg-white text-black border border-red-500">
-        <h2 className="text-[40px]">Lets Connect</h2>
+        <h2 id="contact-section" className="text-[40px]">Lets Connect</h2>
         <p>Please fill out the following form and I will get back to you shortly.</p>
         <form className="flex flex-col gap-[15px]">
           <input type="text" placeholder="Enter your name..." className="border border-black"/>
