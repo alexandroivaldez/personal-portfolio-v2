@@ -103,11 +103,11 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-[100%] justify-center items-center bg-white text-black border border-red-500">
+      <div className="flex flex-col w-[100%] bg-white text-black border border-red-500">
         <h2 id="resume-section" className="text-[40px]">Resume</h2>
       </div>
-      <div className="border border-blue-400 flex">
-        <div>
+      <div className="border border-purple-400 flex justify-center">
+        <div className="w-[50%]">
           <h3>Skills</h3>
           <p>Front-end: React, JavaScript, HTML</p>
           <p>Back-end: MongoDB, Node.js</p>
@@ -115,7 +115,7 @@ const App = () => {
         <div className="flex justify-center">
           <img src={timeLineBar} />
         </div>
-        <div>
+        <div className="w-[50%] flex flex-col gap-[185px]">
           <div>
             <h3>Software Developer</h3>
             <p>Meneses Law | Houston, Texas | 2023 - Present</p>
